@@ -32,13 +32,17 @@ namespace IC
             InitializeComponent();
         }
 
+        /**
+         *  Click button Browse 
+         **/
         private void buttonBrowse_Click(object sender, EventArgs e)
         {
+            // Keluar Wndow baru
             DialogResult res = openFileDialog.ShowDialog();
             if (res == DialogResult.OK || res == DialogResult.Yes)
             {
-                rawPic = new Bitmap(openFileDialog.FileName);
-                picRaw.Image = rawPic;
+                rawPic = new Bitmap(openFileDialog.FileName); // load image
+                picRaw.Image = rawPic; 
             }
         }
 
@@ -48,13 +52,14 @@ namespace IC
             Image<Gray, byte> grayImg = new Image<Gray, byte>(rawPic);
             Image<Bgr, byte> colorImg = new Image<Bgr, byte>(rawPic);
 
-            grayImg = grayImg.ThresholdBinary(new Gray(thres), new Gray(255));
+            grayImg = grayImg.ThresholdBinary(new Gray(thres), new Gray(255)); // threshold parameter
 
             if (invert)
             {
                 grayImg._Not();
             }
 
+            // clear / init
             int count = 0;
             listBoxData.Items.Clear();
             listBoxCategory.Items.Clear();
@@ -65,17 +70,19 @@ namespace IC
             using (MemStorage storage = new MemStorage())
             {
                 count = 0;
+                // image processing using EMGU CV
                 for (Contour<Point> contour = grayImg.FindContours(Emgu.CV.CvEnum.CHAIN_APPROX_METHOD.CV_CHAIN_APPROX_SIMPLE, Emgu.CV.CvEnum.RETR_TYPE.CV_RETR_TREE, storage);
                     contour != null; contour = contour.HNext)
                 {
                     Contour<Point> currentContour = contour.ApproxPoly(contour.Perimeter * 0.05, storage);
 
+                    // if found
                     if (currentContour.BoundingRectangle.Width > 20)
                     {
                         CvInvoke.cvDrawContours(colorImg, contour, new MCvScalar(255),
                             new MCvScalar(255), -1, 2, Emgu.CV.CvEnum.LINE_TYPE.EIGHT_CONNECTED,
                             new Point(0, 0));
-
+                        // Draw rectangle
                         colorImg.Draw(currentContour.BoundingRectangle,
                             new Bgr(0, 0, 255), 20);
                         count++;
@@ -93,6 +100,7 @@ namespace IC
     
         private void resultList(int width, int height, int kira)
         {
+            // Append to listBoxData
             listBoxData.Items.Add("Part No. " + kira.ToString());
             listBoxData.Items.Add("Width: " + width.ToString() + " Height: " + height.ToString());
 
@@ -104,23 +112,27 @@ namespace IC
 
         private void categorizeList(int area)
         {            
+            // Count
             for (int i = 0; i < 2; i++)
             {
-                if (area > icDataMin[i] && area < icDataMax[i])
+                if (area > icDataMin[i] && area < icDataMax[i]) 
                 {
                     countICType[i]++;
                     listBoxCategory.Items.Add("IC " + icName[i] + ":" + countICType[i].ToString());
                 }
             }
-
+         
             labelIntel.Text = countICType[0].ToString();
             labelAtmet.Text = countICType[1].ToString();
         }
 
+        /**
+         *  Trackbar listener 
+         **/
         private void trackBarTreshold_Scroll(object sender, EventArgs e)
         {            
             labelTreshold.Text = trackBarTreshold.Value.ToString() + "%";            
-            convertImage(rawPic, trackBarTreshold.Value, true, out convPic, out colorPic);
+            convertImage(rawPic, trackBarTreshold.Value, true, out convPic, out colorPic); 
         }
 
         private void openFileDialog_FileOk(object sender, CancelEventArgs e)

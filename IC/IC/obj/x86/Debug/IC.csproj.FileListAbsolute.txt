@@ -18,3 +18,19 @@ D:\Google Drive\UiTM Degree\SEM 6 DEGREE STUDY FILE\Advance machine vision works
 D:\Google Drive\UiTM Degree\SEM 6 DEGREE STUDY FILE\Advance machine vision workshop\IntegratedCircuit\IC\IC\bin\x86\Debug\Emgu.CV.UI.xml
 D:\Google Drive\UiTM Degree\SEM 6 DEGREE STUDY FILE\Advance machine vision workshop\IntegratedCircuit\IC\IC\bin\x86\Debug\Emgu.Util.xml
 D:\Google Drive\UiTM Degree\SEM 6 DEGREE STUDY FILE\Advance machine vision workshop\IntegratedCircuit\IC\IC\obj\x86\Debug\IC.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\bin\x86\Debug\IC.exe.config
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\bin\x86\Debug\IC.exe
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\bin\x86\Debug\IC.pdb
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\bin\x86\Debug\ZedGraph.dll
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\bin\x86\Debug\Emgu.CV.xml
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\bin\x86\Debug\Emgu.CV.GPU.xml
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\bin\x86\Debug\Emgu.CV.UI.xml
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\bin\x86\Debug\Emgu.Util.xml
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\obj\x86\Debug\IC.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\obj\x86\Debug\IC.Form1.resources
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\obj\x86\Debug\IC.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\obj\x86\Debug\IC.csproj.GenerateResource.cache
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\obj\x86\Debug\IC.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\obj\x86\Debug\IC.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\obj\x86\Debug\IC.exe
+C:\Users\User\Documents\GitHub\IntegratedCircuitDetector\IC\IC\obj\x86\Debug\IC.pdb
